@@ -1,0 +1,18 @@
+name: flaresolverr
+
+services:
+  flaresolverr:
+    image: ghcr.io/flaresolverr/flaresolverr:latest
+    container_name: flaresolverr
+    environment:
+      - LOG_LEVEL=info
+      - TZ=Europe/London
+    ports:
+      - 8191:8191
+    restart: unless-stopped
+    networks:
+      - arr-network
+
+networks:
+  arr-network:
+    external: true

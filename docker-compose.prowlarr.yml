@@ -13,6 +13,9 @@ services:
     ports:
       - 9696:9696
     restart: unless-stopped
+    networks:
+      - arr-network
 
-    # mkdir -p /home/diego/prowlarr/config
-    # docker compose -f docker-compose.prowlarr.yml up -d
+networks:
+  arr-network:
+    external: true
