@@ -8,10 +8,10 @@ services:
       - TZ=Europe/London
     volumes:
       - /home/diego/radarr/config:/config
-      - /mnt/storage/diego/raddar/movies:/movies
-      - /mnt/storage/diego/raddar/series:/series
-      - /mnt/storage/diego/raddar/anime:/anime
-      - /mnt/storage/diego/raddar/downloads:/downloads
+      - /mnt/storage/diego/radarr/movies:/movies
+      - /mnt/storage/diego/radarr/series:/series
+      - /mnt/storage/diego/radarr/anime:/anime
+      - /mnt/storage/diego/radarr/downloads:/downloads
     ports:
       - 7878:7878
     restart: unless-stopped
