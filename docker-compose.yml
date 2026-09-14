@@ -9,6 +9,8 @@ services:
     volumes:
       - /home/diego/radarr/config:/config
       - /mnt/storage/diego/raddar/movies:/movies
+      - /mnt/storage/diego/raddar/series:/series
+      - /mnt/storage/diego/raddar/anime:/anime
       - /mnt/storage/diego/raddar/downloads:/downloads
     ports:
       - 7878:7878
