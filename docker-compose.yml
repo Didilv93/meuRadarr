@@ -7,9 +7,9 @@ services:
       - PGID=1000       # ajuste com o valor do seu `id`
       - TZ=Europe/London
     volumes:
-      - /opt/radarr/config:/config
-      - /data/movies:/movies
-      - /data/downloads:/downloads
+      - /home/diego/radarr/config:/config
+      - /mnt/storage/diego/raddar/movies:/movies
+      - /mnt/storage/diego/raddar/downloads:/downloads
     ports:
       - 7878:7878
     restart: unless-stopped
