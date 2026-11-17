@@ -1,0 +1,24 @@
+name: bazarr
+
+services:
+  bazarr:
+    image: lscr.io/linuxserver/bazarr:latest
+    container_name: bazarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/London
+    volumes:
+      - /home/diego/bazarr/config:/config
+      - /mnt/storage/diego/radarr/movies:/movies
+      - /mnt/storage/diego/radarr/series:/series
+      - /mnt/storage/diego/radarr/anime:/anime
+    ports:
+      - 6767:6767
+    restart: unless-stopped
+    networks:
+      - arr-network
+
+networks:
+  arr-network:
+    external: true
