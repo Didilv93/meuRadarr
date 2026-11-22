@@ -162,17 +162,20 @@ O cliente OIDC `seerr` e o grupo `hub:seerr` ficam no trem.AUTH. No
 "oidc": { "providers": [ { "slug": "authentik", "name": "trem",
   "issuerUrl": "https://auth.didilv93.com/application/o/seerr/",
   "clientId": "seerr", "clientSecret": "<SEERR_OIDC_CLIENT_SECRET>",
-  "newUserLogin": true } ] }
+  "newUserLogin": false } ] }
 ```
 
 `main.applicationUrl` precisa estar vazio ou ser `http://100.116.16.24:5055`:
 o endereço de retorno é montado a partir dele.
 
-Conta que já existe no Seerr (vinda do Jellyfin) precisa ser **vinculada antes**:
-entrar com o Jellyfin, Settings → Linked Accounts → Link Account → trem. Sem o
-vínculo, o login pelo trem é recusado quando o e-mail já existe; não cria conta
-duplicada. Contas novas entram com as permissões padrão; o admin continua sendo
-definido no próprio Seerr.
+Só entra pelo trem quem já **vinculou** a conta: entrar com o Jellyfin, Settings →
+Linked Accounts → Link Account → trem. Sem o vínculo, o login pelo trem é recusado.
+Pessoa nova entra primeiro pelo Jellyfin (que cria a conta no Seerr) e depois vincula.
+
+`newUserLogin` fica em `false` de propósito: com `true`, um login pelo trem sem vínculo
+e com e-mail diferente do da conta do Jellyfin criava uma **conta local duplicada**, sem
+ligação com o Jellyfin (aconteceu com a conta do admin). O admin continua sendo definido
+no próprio Seerr.
 
 ## Bazarr
 
