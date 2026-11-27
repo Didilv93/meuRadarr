@@ -2,7 +2,8 @@ name: bazarr
 
 services:
   bazarr:
-    image: lscr.io/linuxserver/bazarr:latest
+    # development (beta) until 1.6.3 is stable: 1.6.2 cannot search Legendas.net (bazarr #3722)
+    image: lscr.io/linuxserver/bazarr:development
     container_name: bazarr
     environment:
       - PUID=1000
