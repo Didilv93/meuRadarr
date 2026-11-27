@@ -211,6 +211,13 @@ Baixa legendas automaticamente para o que entra no Radarr e no Sonarr.
 - **Config**: `/home/diego/bazarr/config`
 - **Bibliotecas**: `/movies`, `/series` e `/anime`, nos mesmos caminhos que o
   Radarr e o Sonarr veem; por isso não precisa de mapeamento de caminhos.
+- **Imagem `development` (beta)**: a 1.6.2 estável não busca no Legendas.net
+  (400 em toda busca desde a mudança da API deles, bazarr#3722). Voltar para
+  `latest` quando sair a 1.6.3.
+- **Legendas.net**: o campo *Username* do provedor é enviado como e-mail; colocar o
+  e-mail da conta, não o nome de usuário.
+- **Anime**: o AnimeTosho foi desativado e não há outro provedor de anime; a
+  integração com o AniDB (aba Metadata) não é necessária.
 
 ```
 mkdir -p /home/diego/bazarr/config
